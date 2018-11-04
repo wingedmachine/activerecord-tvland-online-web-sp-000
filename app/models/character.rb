@@ -8,6 +8,8 @@ class Character < ActiveRecord::Base
 
   def build_show(options = {})
     show = Show.find_or_create_by(options)
-    binding.pry
+    show.characters << self
+
+    show
   end
 end
